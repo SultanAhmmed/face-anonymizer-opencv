@@ -112,7 +112,7 @@ python main.py
 
 ## 👤 Author
 
-Your Name
+Sultan Ahmmed
 
 ---
 
