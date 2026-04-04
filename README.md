@@ -1,38 +1,49 @@
-# Face Anonymizer using OpenCV
+# Face Anonymizer using OpenCV & MediaPipe
 
-## 🚀 Overview
+## 📌 Overview
 
-This project is a real-time face anonymization tool built using OpenCV. It detects human faces from a webcam or video stream and applies different anonymization techniques such as blurring, pixelation, or masking to protect identity.
-
-This is useful for:
-
-* Privacy-focused applications
-* Surveillance systems
-* Dataset preprocessing
-* Computer vision learning projects
+This project is a real-time face anonymization system using OpenCV and MediaPipe. It detects faces from a webcam feed and applies different privacy-preserving effects such as blur, pixelation, or masking.
 
 ---
 
-## 🎯 Features
+## 🎯 Objectives
 
-* Real-time face detection
-* Anonymization modes:
-  * Gaussian Blur
-    
-* Works with:
-
-  * Webcam
-  * Video files
-  * Images
-* Lightweight and beginner-friendly
+* Detect human faces in real-time
+* Apply anonymization techniques to protect identity
+* Practice computer vision and real-time processing
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technologies Used
 
-* Python 3.x
+* Python
 * OpenCV
+* MediaPipe (Tasks API)
 * NumPy
+
+---
+
+## ⚙️ Features
+
+* Real-time face detection using MediaPipe
+* Multiple anonymization modes:
+
+  * Blur
+  * Pixelation
+  * Black masking
+* Webcam-based live processing
+* Keyboard-controlled mode switching
+
+---
+
+## ⌨️ Controls
+
+| Key | Action        |
+| --- | ------------- |
+| `b` | Blur mode     |
+| `p` | Pixelate mode |
+| `m` | Black mask    |
+| `q` | Quit program  |
 
 ---
 
@@ -41,99 +52,70 @@ This is useful for:
 ```
 face-anonymizer-opencv/
 │── main.py
-│── anonymizer.py
-│── utils.py
-│── requirements.txt
+│── model/
+│   └── blaze_face_short_range.tflite
+│── data/
+│   └── Human_image_test.jpg
 │── README.md
 ```
 
 ---
 
-## ⚙️ Installation
+## 🚀 How It Works
 
-1. Clone the repository:
+1. Capture frames from webcam
+2. Convert frame from BGR to RGB
+3. Detect faces using MediaPipe Face Detector
+4. Extract bounding box of each detected face
+5. Apply selected anonymization method:
 
-```bash
-git clone https://github.com/yourusername/face-anonymizer-opencv.git
-cd face-anonymizer-opencv
-```
-
-2. Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
+   * Blur: Gaussian smoothing
+   * Pixelate: Downscale and upscale image
+   * Mask: Replace face with black region
+6. Display processed frame in real-time
 
 ---
 
-## ▶️ Usage
+## ▶️ How to Run
 
-### Run with Webcam
+### 1. Install dependencies
+
+```bash
+pip install opencv-python mediapipe numpy
+```
+
+### 2. Run the application
 
 ```bash
 python main.py
 ```
 
-### Run with Video File
+---
 
-```bash
-python main.py --video path/to/video.mp4
-```
+## 📊 Applications
+
+* Privacy protection in surveillance systems
+* Dataset preprocessing
+* Research in computer vision
+* Ethical AI development
 
 ---
 
-## 🧩 How It Works
+## 📈 Future Improvements
 
-1. Capture frames from webcam/video
-2. Detect faces using OpenCV Haar Cascade or DNN
-3. Extract face region (ROI)
-4. Apply anonymization:
-
-   * Blur → Gaussian smoothing
-   * Pixelate → Resize + scale
-   * Mask → Fill rectangle
-5. Display processed frame
+* Add face tracking to improve stability
+* Improve detection using advanced models (YOLO)
+* Add GUI for mode selection
+* Enable video recording of anonymized output
 
 ---
 
-## 🔧 Example Modes
+## 👤 Author
 
-### Blur Mode
-
-Applies Gaussian blur to hide identity.
-
-### Pixelation Mode
-
-Reduces resolution of face region.
-
-### Mask Mode
-
-Covers face with solid rectangle.
-
----
-
-## 📸 Future Improvements
-
-* Use deep learning face detectors (DNN / YOLO)
-* Add face tracking for efficiency
-* Export anonymized videos
-* Integrate with RTSP streams (CCTV)
-* Add GUI (Tkinter or Streamlit)
-
----
-
-## 🤝 Contributing
-
-Pull requests are welcome. For major changes, open an issue first.
+Your Name
 
 ---
 
 ## 📜 License
 
-MIT License
-
----
-
-## 👤 Author Sultan Ahmmed
-
-Your Name
+This project is for educational purposes.
