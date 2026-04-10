@@ -6,6 +6,14 @@ This project is a real-time face anonymization system using OpenCV and MediaPipe
 
 ---
 
+## 🎥 Demo
+
+![Blur Mode](./blur.png)
+![Pixelate Mode](./pixelate.png)
+![Mask Mode](./mask.png)
+
+---
+
 ## 🎯 Objectives
 
 * Detect human faces in real-time
